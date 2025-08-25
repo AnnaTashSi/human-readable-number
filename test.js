@@ -2,12 +2,19 @@ const assert = require('assert');
 
 const toReadable = require('./src');
 
+// Для запуска части тестов
+// describe.only("mistake", () => {
+    //... здесь тесты
+// }) 
+
 
 it('Should return \'zero\' when 0 given', () => {
-  const readable = toReadable(0);
+      const readable = toReadable(0);
+      console.log (readable);
 
-  assert.equal(readable, 'zero');
-});
+
+      assert.equal(readable, 'zero');
+    });
 
 it('Should return \'one\' when 1 given', () => {
   const readable = toReadable(1);
