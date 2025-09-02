@@ -1,4 +1,4 @@
-module.exports = function toReadable(number) {
+module.exports = function toReadable(numb) {
   const ones = [
     '',
     'one',
@@ -59,5 +59,5 @@ module.exports = function toReadable(number) {
     return convertHundreds(numb);
   } 
 
-  return convert(num); 
+  return convert(numb); 
 };
