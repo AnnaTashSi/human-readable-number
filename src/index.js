@@ -38,17 +38,17 @@ module.exports = function toReadable(num) {
   ];
 
   function convertTens(numb) {
-    if (numb < 10) return ones[numb];
-    if (numb >= 10 && numb < 20) return teens[numb - 10];
-
+    if (numb < 10) {
+      return ones[numb];
+    } else if (numb >= 10 && numb < 20) {
+      return teens[numb - 10];
+    } 
     return `${tens[Math.floor(numb / 10)]} ${ones[numb % 10]}`.trim();
   } 
 
   function convertHundreds(numb) {
     if (numb > 99 && numb < 1000) {
-      return `${ones[Math.floor(numb / 100)]} hundred ${convertTens(
-        numb % 100,
-      )}`.trim();
+      return `${ones[Math.floor(numb / 100)]} hundred ${convertTens(numb % 100,)}`.trim();
     }
     return convertTens(numb);
   } 
