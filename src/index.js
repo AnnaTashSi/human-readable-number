@@ -1,4 +1,4 @@
-module.exports = function toReadable(numb) {
+module.exports = function toReadable(num) {
   const ones = [
     '',
     'one',
@@ -39,7 +39,6 @@ module.exports = function toReadable(numb) {
 
   function convertTens(numb) {
     if (numb < 10) return ones[numb];
-    
     if (numb >= 10 && numb < 20) return teens[numb - 10];
 
     return `${tens[Math.floor(numb / 10)]} ${ones[numb % 10]}`.trim();
@@ -58,6 +57,6 @@ module.exports = function toReadable(numb) {
     if (numb === 0) return 'zero';
     return convertHundreds(numb);
   } 
-
-  return convert(numb); 
+ 
+  return convert(num); 
 };
